@@ -10,7 +10,7 @@ exports.isSignedIn = async (req, res, next) => {
       const decodedToken = jwt.verify(token, process.env.SECRET);
 
       req.user = decodedToken;
-      next();
+      return next();
     } catch (error) {
       return res.status(500).json({
         message: "Auth failed",
@@ -19,7 +19,7 @@ exports.isSignedIn = async (req, res, next) => {
   }
   return res
     .status(400)
-    .json({ message: "Valid authorization token required" });
+    .json({ message: "Valid authorization token required need" });
 };
 
 exports.isAuthenticated = (req, res, next) => {
@@ -28,7 +28,7 @@ exports.isAuthenticated = (req, res, next) => {
     if (!checker) {
       return res.status(500).json({ message: "Authentication Failed" });
     }
-    next();
+    return next();
   } catch (error) {
     return res.status(500).json({
       message: "Failed to authenticate user",

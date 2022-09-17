@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5000;
 dbConfig();
 
 const authRoute = require("./src/api/v1/routes/auth");
+const userRoute = require("./src/api/v1/routes/user");
+const userInfoRoute = require("./src/api/v1/routes/userInfo");
 
 app.use(express.json());
 app.use(cors());
@@ -22,5 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1", authRoute);
+app.use("/api/v1", userRoute);
+app.use("/api/v1", userInfoRoute);
 
 app.listen(PORT, () => {console.log(`server runnig on PORT: ${PORT}`)});
