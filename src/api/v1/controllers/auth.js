@@ -18,16 +18,6 @@ exports.signup = async (req, res) => {
         message: "Failed to create User",
       });
     }
-
-    // let result;
-
-    // if (file) {
-    //   result = await cloudinary.uploader.upload(file?.path, {
-    //     folder: "Matfly_Project",
-    //   });
-    //   await unlinkFile(file?.path);
-    // }
-
     const userInfo = await UserInfo.create({
       userId: user._id,
     });
