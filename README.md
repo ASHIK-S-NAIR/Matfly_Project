@@ -14,6 +14,11 @@ Rest api methods in nodejs:
 ```
 
 
+## Backend Architecure
+
+![App Screenshot](https://github.com/ASHIK-S-NAIR/Matfly_Project/blob/master/Matfly_Project.png)
+
+
 ## API Reference
 
 #### POST Signup
